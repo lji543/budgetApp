@@ -6,7 +6,7 @@ import './scss/App.scss';
 class App extends Component {
   render() {
     return (
-      <div className="App-body">
+      <div className="">
         This is our weight loss app. yay.
       </div>
     );
