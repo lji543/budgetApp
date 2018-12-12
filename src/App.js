@@ -6,7 +6,7 @@ import Profiles from './components/Profiles';
 import './scss/App.scss';
 
 const headerTitles = [
-  " ",
+  "  ",
   "Starting",
   "Current",
   "Lbs Lost",

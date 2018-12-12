@@ -9,11 +9,11 @@ export class ListHeader extends React.Component{
 
   render() {
     return (
-      <div className="list-header">
+      <tr className="list-header">
         {this.props.headerTitles.map((item,idx) => {
-          return <span className="list-header-item" key={idx}>{item}</span>
+          return <td className="list-header-item" key={idx}>{item}</td>
         })}
-      </div>
+      </tr>
     );
   }
 
