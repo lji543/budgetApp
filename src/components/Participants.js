@@ -2,7 +2,6 @@ import React from 'react';
 
 import DataCalculations from './DataCalculations';
 import List from './Utility/List';
-// import ListHeader from './Utility/ListHeader';
 
 export class ContactList extends React.Component{
 
@@ -15,7 +14,7 @@ export class ContactList extends React.Component{
   }
 
   addDataProperties = () => {
-    let participants = this.state.participants.map(participant => {
+    this.state.participants.map(participant => {
       return participant.isEditing = false;
     })
     this.setState(prevState => {
@@ -23,6 +22,7 @@ export class ContactList extends React.Component{
     })
   }
 
+  // TODO combine this and updateData somehow
   changeEditingState = (e,id) => {
     const {participants} = this.state;
 
@@ -41,12 +41,14 @@ export class ContactList extends React.Component{
 
     this.state.participants.map(p => {
       if (p.id === id) {
-        p[prop] = e.target.value;
+        return p[prop] = e.target.value;
       }
+      // TODO is map the best thing to use here? need to return value,
+      // but dont need to iterate through everything
+      return p;
     })
 
-    // TODO should probably set this here? but also handled by getNewCalculations...
-    // this.setState({participants: participants})
+    // TODO should probably set state here? but also handled by getNewCalculations...
     this.getNewCalculations();
   }
 

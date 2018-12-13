@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class ListHeader extends React.Component{
+class ListHeader extends React.Component{
 
   // constructor(props) {
     // super(props);
