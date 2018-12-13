@@ -5,10 +5,13 @@ import ListHeader from './ListHeader';
 
 export default class List extends React.Component{
 
-  // constructor(props) {
-  //   super(props);
-  //
-  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      listItems: <div></div>
+    }
+  }
 
   handleEdit = (prop,id) => e => {
     this.props.updateData(e,prop,id);
@@ -22,8 +25,7 @@ export default class List extends React.Component{
     let listItems = Object.values(this.props.listItems)
 
     // TODO add a more specific index if these lists are going to be changed by input
-    return (
-      listItems.map((obj,idx) => {
+    return listItems.map((obj,idx) => {
         let values = Object.values(obj);
         // TODO move this / cleanup
         let editable = ["name", "currentWeight", "goalWeight"];
@@ -48,16 +50,16 @@ export default class List extends React.Component{
           </tr>
         )
       })
-    )
   }
 
   render() {
+    const template = this.generateList();
 
     return (
       <table className="list-container">
         <tbody>
           <ListHeader headerTitles={this.props.headerTitles} />
-          {this.generateList()}
+          {template}
         </tbody>
       </table>
     );

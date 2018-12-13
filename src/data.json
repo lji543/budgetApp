@@ -13,40 +13,35 @@
       "lastName": "Cook",
       "initialWeight": 175,
       "currentWeight": 170,
-      "goalWeight": 140,
-      "id": 1
+      "goalWeight": 140
     },
     {
       "firstName": "Terance",
       "lastName": "Tucker",
       "initialWeight": 250,
       "currentWeight": 240,
-      "goalWeight": 200,
-      "id": 2
+      "goalWeight": 200
     },
     {
       "firstName": "Tom",
       "lastName": "Taylor",
       "initialWeight": 175,
       "currentWeight": 170,
-      "goalWeight": 140,
-      "id": 3
+      "goalWeight": 140
     },
     {
       "firstName": "Mike",
       "lastName": "Long",
       "initialWeight": 240,
       "currentWeight": 235,
-      "goalWeight": 219,
-      "id": 4
+      "goalWeight": 219
     },
     {
       "firstName": "Chase",
       "lastName": "Christensen",
       "initialWeight": 200,
       "currentWeight": 210,
-      "goalWeight": 180,
-      "id": 5
+      "goalWeight": 180
     }
   ]
 }

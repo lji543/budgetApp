@@ -11,10 +11,13 @@ class AddParticipant extends React.Component{
     this.state = {
       isEditing: false,
       template: this.buttonTemplate,
-      firstName: "",
-      lastName: "",
-      currentWeight: 0,
-      goalWeight: 0
+      newParticipant: {
+        firstName: "",
+        lastName: "",
+        currentWeight: 0,
+        initialWeight: 0,
+        goalWeight: 0
+      }
     }
   }
 
@@ -24,7 +27,7 @@ class AddParticipant extends React.Component{
 
   handleChange = e => {
     const { name, value } = e.target;
-    this.setState({[name]:value})
+    this.setState({ newParticipant: { ...this.state.newParticipant, [name]: value} });
   }
 
   // TODO repeat through these / combine with list items to make a new component
@@ -37,7 +40,7 @@ class AddParticipant extends React.Component{
         Last Name<input name="lastName" onChange={this.handleChange} />
         Current Weight<input name="currentWeight" onChange={this.handleChange} />
         Goal Weight<input name="goalWeight" onChange={this.handleChange} />
-        <button onClick={() => {this.handleClick(); this.props.addNewParticipant(this.state)}}>Submit</button>
+        <button onClick={() => {this.handleClick(); this.props.addNewParticipant(this.state.newParticipant)}}>Submit</button>
       </div>
     )
   }

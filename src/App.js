@@ -19,8 +19,19 @@ const headerTitles = [
 
 class App extends Component {
 
+  constructor() {
+    super()
+
+    this.state = {
+      participants: Profiles
+    }
+  }
+
   addNewParticipant = participant => {
-    console.log(participant)
+    Profiles.push(participant);
+    this.setState(prevState => {
+      return {participants: Profiles}
+    })
   }
 
   render() {
@@ -28,7 +39,7 @@ class App extends Component {
       <>
       <div className="App-body">
         <Participants
-          participants={Profiles}
+          participants={this.state.participants}
           headerTitles={headerTitles}
         />
       </div>

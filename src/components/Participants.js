@@ -3,19 +3,27 @@ import React from 'react';
 import DataCalculations from './DataCalculations';
 import List from './Utility/List';
 
-export class ContactList extends React.Component{
+export class Participants extends React.Component{
 
   constructor(props) {
     super(props);
 
     this.state = {
       participants: this.props.participants,
+      listItems: {}
     }
   }
 
+  // TODO should this be moved to App?
   addDataProperties = () => {
-    this.state.participants.map(participant => {
-      return participant.isEditing = false;
+    // TODO double check the use of state, then setting w/ prevState
+    this.state.participants.map((participant,idx) => {
+      if (participant.initialWeight===0){
+        participant.initialWeight = participant.currentWeight;
+      }
+      participant.isEditing = false;
+      participant.id = idx;
+      return participant;
     })
     this.setState(prevState => {
       return {participants:prevState.participants}
@@ -24,22 +32,20 @@ export class ContactList extends React.Component{
 
   // TODO combine this and updateData somehow
   changeEditingState = (e,id) => {
-    const {participants} = this.state;
+    const {listItems} = this.state;
 
-    participants.map(participant => {
+    listItems.map(participant => {
       if (participant.id === id) {
         return participant.isEditing = !participant.isEditing
       }
       return participant.isEditing;
     })
 
-    this.setState({participants:participants})
+    this.setState({listItems:listItems})
   }
 
   updateData = (e,prop,id) => {
-    console.log(e.target.value,prop,id)
-
-    this.state.participants.map(p => {
+    this.state.listItems.map(p => {
       if (p.id === id) {
         return p[prop] = e.target.value;
       }
@@ -69,7 +75,7 @@ export class ContactList extends React.Component{
   }
 
   listItems = () => {
-    return this.state.participants.map((p,idx) => {
+    let listItems = this.state.participants.map((p,idx) => {
       // TODO dont really need to set this here? list is now unique
       return ({
         name: `${p.firstName} ${p.lastName}`,
@@ -84,15 +90,27 @@ export class ContactList extends React.Component{
         isEditing: p.isEditing
       })
     })
+    this.setState(prevState => {
+      return {listItems:listItems}
+    })
   }
 
   componentDidMount() {
     this.addDataProperties();
     this.getNewCalculations();
+    this.listItems();
+  }
+
+  componentWillReceiveProps() {
+    // TODO already received new props (ie nextProps is the same as the current),
+    // so is this really the best place? should we move the calculations, etc somewhere else?
+    // or at a different point in the lifecycle?
+    this.addDataProperties();
+    this.getNewCalculations();
+    this.listItems();
   }
 
   render() {
-
     return (
       <div className="">
         <List className=""
@@ -100,7 +118,7 @@ export class ContactList extends React.Component{
           updateData={this.updateData}
           changeEditingState={this.changeEditingState}
           headerTitles={this.props.headerTitles}
-          listItems={this.listItems()}
+          listItems={this.state.listItems}
         />
       </div>
     );
@@ -108,4 +126,4 @@ export class ContactList extends React.Component{
 
 }
 
-export default ContactList;
+export default Participants;
