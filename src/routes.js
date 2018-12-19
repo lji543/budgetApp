@@ -1,6 +1,4 @@
 import App from './App';
-// import Participants from './components/Participants';
-import Profile from './components/Profile';
 
 import NotFound from './components/NotFound';
 
@@ -15,15 +13,24 @@ const routes = [
       };
     }
   },
-  {
-    name: "Profile",
-    path: "profile",
-    response: () => {
-      return {
-        body: Profile
-      };
-    }
-  },
+  // {
+  //   name: "Profile",
+  //   path: "profile",
+  //   response: () => {
+  //     return {
+  //       body: Profile
+  //     };
+  //   }
+  // },
+  // {
+  //   name: "Add Participant",
+  //   path: "add",
+  //   response: () => {
+  //     return {
+  //       body: AddParticipant
+  //     };
+  //   }
+  // },
   // {
   //   name: "Name",
   //   path: "path",

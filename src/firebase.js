@@ -1,12 +1,12 @@
 import fire from 'firebase';
 
 const config = {
-  apiKey: "AIzaSyAQyj7KooOboRGAOFDsQbV5FbEXcSeisEM",
-  authDomain: "ads-hungry-games.firebaseapp.com",
-  databaseURL: "https://ads-hungry-games.firebaseio.com",
-  projectId: "ads-hungry-games",
-  storageBucket: "ads-hungry-games.appspot.com",
-  messagingSenderId: "723138714103"
+  apiKey: "AIzaSyCfc3HVcF9joRdxBR3Thq5e6_IbKdMq8ns",
+  authDomain: "personalbudgetwebapp.firebaseapp.com",
+  databaseURL: "https://personalbudgetwebapp.firebaseio.com",
+  projectId: "personalbudgetwebapp",
+  storageBucket: "",
+  messagingSenderId: "747392590521"
 };
 const firebase = fire.initializeApp(config);
 export default firebase;
