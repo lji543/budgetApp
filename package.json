@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "apollobaseapp",
+=======
+  "name": "budgetApp",
+>>>>>>> laura
   "version": "0.1.0",
   "private": true,
   "dependencies": {

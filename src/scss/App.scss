@@ -1,1 +1,58 @@
 @import "materialize";
+<<<<<<< HEAD
+=======
+
+.App-body {
+  display: flex;
+  margin: 24px;
+  justify-content: space-around;
+}
+
+// .side-panel {
+//
+//   list-section:not(:first-child) {
+//     margin-top: 24px;
+//   }
+// }
+
+.list-header {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+
+  td:not(:first-child):not(:last-child) {
+    margin-right: 56px;
+  }
+  td:first-child {
+    align-items: flex-start;
+    width: 256px;
+  }
+}
+
+.list-header-item {
+
+}
+
+.list-container {
+  //
+}
+
+.list-row {
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 36px;
+  margin-top: 12px;
+
+  td:not(:first-child):not(:last-child) {
+    margin-right: 56px;
+  }
+  td:first-child {
+    align-items: flex-start;
+    width: 256px;
+  }
+}
+
+.list-row_item {
+
+}
+>>>>>>> laura
