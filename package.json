@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "apollobaseapp",
-=======
-  "name": "budgetApp",
->>>>>>> laura
+  "name": "hungrygames",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

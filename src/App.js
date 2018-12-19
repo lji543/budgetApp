@@ -10,15 +10,9 @@ class App extends Component {
   render() {
     console.log(this.state)
     return (
-<<<<<<< HEAD
-      <div className="">
-        This is our weight loss app. yay.
-      </div>
-=======
       <>
       <div>hello</div>
       </>
->>>>>>> laura
     );
   }
 }
